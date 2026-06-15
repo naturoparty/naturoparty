@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naturoparty | Conseiller en Naturopathie & Éditions Bien-être</title>
-    <!-- Google Fonts -->
+    
+    <title>Naturopathe Cagnes-sur-Mer, Nice, Cannes | Naturoparty</title>
+    <meta name="description" content="Conseiller en naturopathie et hygiène de vie dans les Alpes-Maritimes (Cagnes-sur-Mer, Nice, Antibes, Cannes). Optimisez votre vitalité et découvrez nos guides pratiques.">
+    <link rel="canonical" href="https://naturoparty.github.io/naturoparty/">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naturoparty.github.io/naturoparty/">
+    <meta property="og:title" content="Naturopathe Cagnes-sur-Mer, Nice, Cannes | Naturoparty">
+    <meta property="og:description" content="Accompagnement global en hygiène de vie, chronobiologie nutritionnelle et éditions de guides de santé naturelle sur la Côte d'Azur.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://naturoparty.github.io/naturoparty/">
+    <meta property="twitter:title" content="Naturopathe Cagnes-sur-Mer, Nice, Cannes | Naturoparty">
+    <meta property="twitter:description" content="Accompagnement global en hygiène de vie, chronobiologie nutritionnelle et éditions de guides de santé naturelle sur la Côte d'Azur.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&h=630&q=80">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -13,9 +29,9 @@
         :root {
             --primary: #2C5E3B; /* Vert forestier élégant */
             --primary-light: #F2F6F3; /* Fond vert très doux */
-            --accent: #D4A373; /* Terracotta / Doré solaire de la Côte d'Azur */
+            --accent: #D4A373; /* Terracotta / Doré solaire */
             --accent-light: #FAEDCD;
-            --text-dark: #2B2B2B; /* Anthracite pour une lecture confortable */
+            --text-dark: #2B2B2B; /* Anthracite pour lecture confortable */
             --text-light: #666666;
             --bg-white: #FFFFFF;
             --font-title: 'Playfair Display', serif;
@@ -30,7 +46,7 @@
             padding: 0;
         }
 
-        /* VERROU 1 : On bloque le scroll horizontal sur HTML et BODY */
+        /* SECURITE ANTI-SCROLL HORIZONTAL MOBILE */
         html, body {
             width: 100%;
             overflow-x: hidden;
@@ -223,7 +239,7 @@
             margin: 0 auto 60px auto;
         }
 
-        /*--- APPROACH ---*/
+        /*--- APPROCHE ---*/
         .approach-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -600,7 +616,7 @@
             font-size: 12px;
         }
 
-        /*--- AJUSTEMENTS RESPONSIVE ---*/
+        /*--- CONFIGURATION RESPONSIVE CORRIGÉE (BUG BURGER FIXED) ---*/
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
@@ -619,7 +635,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 25px;
-                /* VERROU 2 : On ajoute la transition de visibilité pour masquer l'élément hors-écran */
+                /* DOUBLE SECURITE TECHNIQUE : transition sur right + visibilité */
                 transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.4s;
                 z-index: 1000;
                 visibility: hidden; 
@@ -627,7 +643,7 @@
 
             nav.active {
                 right: 0;
-                visibility: visible; /* Devient actif uniquement si cliqué */
+                visibility: visible;
             }
 
             nav a {
@@ -679,10 +695,51 @@
             .logo { font-size: 22px; }
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Naturoparty - Conseiller en Naturopathie",
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+      "url": "https://naturoparty.github.io/naturoparty/",
+      "priceRange": "55€ - 75€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cagnes-sur-Mer",
+        "addressRegion": "Alpes-Maritimes, PACA",
+        "postalCode": "06800",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.6644,
+        "longitude": 7.1489
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Cagnes-sur-Mer" },
+        { "@type": "AdministrativeArea", "name": "Nice" },
+        { "@type": "AdministrativeArea", "name": "Cannes" },
+        { "@type": "AdministrativeArea", "name": "Antibes" },
+        { "@type": "AdministrativeArea", "name": "Vence" }
+      ]
+    }
+    </script>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Naturo<span>party</span></a>
@@ -703,7 +760,6 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">Conseil & Éditions de Santé Naturelle</span>
@@ -714,7 +770,6 @@
         </div>
     </section>
 
-    <!-- MON APPROCHE -->
     <section id="approche">
         <h2 class="section-title">Une vision moderne de la naturopathie</h2>
         <p class="section-subtitle">Une méthode bienveillante, simple et concrète, à contre-courant du jargon médical complexe pour vous rendre pleinement autonome.</p>
@@ -748,7 +803,6 @@
         </div>
     </section>
 
-    <!-- EBOOKS VITRINE -->
     <div class="ebooks-section" id="ebooks">
         <div class="ebooks-container">
             <h2 class="section-title">Mes Guides Pratiques & Publications</h2>
@@ -778,7 +832,6 @@
         </div>
     </div>
 
-    <!-- CONSULTATIONS & TARIFS -->
     <div class="services" id="tarifs">
         <section class="services-container">
             <h2 class="section-title">Mes Prestations de Conseil</h2>
@@ -815,7 +868,6 @@
         </section>
     </div>
 
-    <!-- CHARTE ETHIQUE -->
     <section id="ethique">
         <div class="ethics-box">
             <h3>Cadre Légal & Déontologie</h3>
@@ -824,7 +876,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
         <h2 class="section-title">Discutons de votre projet de vitalité</h2>
         <p class="section-subtitle">Une question ? Une envie de retrouver l'équilibre ? Envoyez-moi un message pour caler notre premier rendez-vous.</p>
@@ -870,7 +921,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
