@@ -30,6 +30,13 @@
             padding: 0;
         }
 
+        /* VERROU 1 : On bloque le scroll horizontal sur HTML et BODY */
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -39,7 +46,6 @@
             color: var(--text-dark);
             background-color: #FCFDFD;
             line-height: 1.6;
-            overflow-x: hidden; /* Empêche le défilement horizontal parasite */
         }
 
         /*--- NAVIGATION & HAMBURGER ---*/
@@ -279,7 +285,6 @@
 
         .ebooks-grid {
             display: grid;
-            /* Changement critique pour iPhone SE : minmax à 280px au lieu de 450px */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 20px;
@@ -595,9 +600,8 @@
             font-size: 12px;
         }
 
-        /*--- 📱 AJUSTEMENTS RESPONSIVE & IPHONE SE 📱 ---*/
+        /*--- AJUSTEMENTS RESPONSIVE ---*/
         @media (max-width: 768px) {
-            /* Activation et style du menu mobile (Hamburger) */
             .menu-toggle {
                 display: flex;
             }
@@ -615,12 +619,15 @@
                 justify-content: center;
                 align-items: center;
                 gap: 25px;
-                transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+                /* VERROU 2 : On ajoute la transition de visibilité pour masquer l'élément hors-écran */
+                transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.4s;
                 z-index: 1000;
+                visibility: hidden; 
             }
 
             nav.active {
                 right: 0;
+                visibility: visible; /* Devient actif uniquement si cliqué */
             }
 
             nav a {
@@ -632,7 +639,6 @@
                 padding: 10px 0;
             }
 
-            /* Animations de transformation du hamburger en croix (X) */
             .menu-toggle.active span:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
             }
@@ -643,7 +649,6 @@
                 transform: translateY(-8px) rotate(-45deg);
             }
 
-            /* Redimensionnements globaux pour écrans mobiles */
             .hero { padding: 90px 15px; }
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; margin-bottom: 30px; }
@@ -665,7 +670,6 @@
             .footer-links a { margin: 5px 10px; display: inline-block; }
         }
 
-        /* Correctifs ultra-spécifiques pour les écrans minuscules (iPhone SE) */
         @media (max-width: 400px) {
             .hero h1 { font-size: 28px; }
             .hero .btn { display: block; margin: 10px auto; width: 100%; max-width: 260px; padding: 14px 20px; }
@@ -683,7 +687,6 @@
         <div class="nav-container">
             <a href="#" class="logo">Naturo<span>party</span></a>
             
-            <!-- Le bouton magique du Hamburger -->
             <button class="menu-toggle" aria-label="Ouvrir le menu">
                 <span></span>
                 <span></span>
@@ -735,7 +738,7 @@
                 <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=500&q=80" alt="Accompagnement" class="approach-img">
                 <div class="approach-text">
                     <h3>Accompagnement Global</h3>
-                    <p>Une prise en compte globale basée sur le bon sens, la chronobiologie et l'écoute. Pas de fausses promesses, mais des solutions adaptées au rythme de votre vie.</p>
+                    <p>Une prise en compte globale basée sur le bon sens, la chronobiologie et l'écoute. Pas de fausses promesses, mais des solutions adaptés au rythme de votre vie.</p>
                 </div>
             </div>
         </div>
@@ -884,23 +887,20 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Naturoparty. Tous droits réservés.</p>
-            <p>Projet de création d'entreprise — Micro-entreprise en cours d'immatriculation (Lancement : 2ème semestre 2026) | Contenu éditorial conforme aux articles L. 132-5 du CSP | Médiation de la accumulation (en cours de rattachement)</p>
+            <p>Projet de création d'entreprise — Micro-entreprise en cours d'immatriculation (Lancement : 2ème semestre 2026) | Contenu éditorial conforme aux articles L. 132-5 du CSP | Médiation de la consommation (en cours de rattachement)</p>
         </div>
     </footer>
 
-    <!-- LE SCRIPT JAVASCRIPT POUR LE MENU HAMBURGER -->
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         const navLinks = document.querySelectorAll('nav a');
 
-        // Ouvre ou ferme le menu au clic sur le hamburger
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
 
-        // Ferme le menu dès qu'on clique sur un lien (pour faire défiler la page)
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
