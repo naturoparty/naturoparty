@@ -6,7 +6,7 @@
     <title>Naturoparty - Conseiller en Naturopathie & Éditions Bien-Être</title>
     <meta name="description" content="Accompagnement en hygiène de vie, gestion du stress et chronobiologie nutritionnelle à Cagnes-sur-Mer, Nice et Cannes. Découvrez nos guides pratiques sur Amazon KDP.">
     
-    <!-- Validation Google Search Console (À remplacer par votre code fourni par Google) -->
+    <!-- Validation Google Search Console (À remplacer par ton code fourni par Google) -->
     <meta name="google-site-verification" content="VOTRE_CODE_DE_VERIFICATION_ICI" />
 
     <!-- Google Fonts -->
@@ -123,11 +123,17 @@
             height: 70px;
         }
 
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            color: var(--primary);
-            letter-spacing: 1px;
+        /* Style Intégration Logo Image */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo-img {
+            height: 45px; /* Hauteur optimale pour la navbar */
+            width: auto;
+            display: block;
         }
 
         .nav-links {
@@ -246,7 +252,7 @@
             color: var(--text-muted);
         }
 
-/* --- TARIFS & PRESTATIONS --- */
+        /* --- TARIFS & PRESTATIONS --- */
         .tarifs-section {
             padding: 100px 0;
             background-color: var(--white);
@@ -318,7 +324,8 @@
             color: var(--primary-light);
             font-weight: 700;
         }
-        /* --- VUTRINE EBOOKS --- */
+
+        /* --- VITRINE EBOOKS --- */
         .ebooks-section {
             background-color: var(--light);
             padding: 100px 0;
@@ -467,7 +474,7 @@
             .approach-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .ebooks-grid {
+            .tarifs-grid, .ebooks-grid {
                 grid-template-columns: 1fr;
                 max-width: 550px;
             }
@@ -536,7 +543,10 @@
     <!-- LOGO ET MENU DE NAVIGATION -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Naturoparty</a>
+            <!-- Remplacement du texte par le Logo Horizontal PNG -->
+            <a href="#" class="logo-link">
+                <img src="logo-horizontal.png" alt="Naturoparty - Hygiène de vie" class="logo-img">
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#approche">Mon Approche</a></li>
@@ -545,9 +555,9 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger" id="burgerToggle">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
             </div>
         </div>
     </header>
@@ -595,7 +605,8 @@
                 </div>
             </div>
         </section>
-<!-- SECTION TARIFS & PRESTATIONS -->
+
+        <!-- SECTION TARIFS & PRESTATIONS -->
         <section id="tarifs" class="tarifs-section">
             <div class="container">
                 <h2 class="section-title">Tarifs & Accompagnements</h2>
@@ -636,6 +647,7 @@
                 </div>
             </div>
         </section>
+
         <!-- SECTION EBOOKS VITRINE -->
         <section class="ebooks-section" id="ebooks">
             <div class="container">
@@ -658,7 +670,7 @@
                         <div class="ebook-details">
                             <span class="ebook-tag">Aromathérapie Sécurisée</span>
                             <h3>Le Guide Essentiel des Huiles & Hydrolats</h3>
-                            <p>Maîtrisez l'usage des extraits de plantes, des huiles végétales et des hydrolats pour soutenir votre organisme, renforcer vos barrières naturelles et apaiser votre système nerveux.</p>
+                            <p>Maîtrisez l'usage des extraits de plantes, des huiles végétales et des hydrolats pour soutenir votre organism, renforcer vos barrières naturelles et apaiser votre système nerveux.</p>
                             <span class="ebook-meta">📖 Collection Naturoparty — Bientôt sur Amazon KDP</span>
                         </div>
                     </div>
@@ -684,7 +696,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Numéro de téléphone</label>
-                            <input type="tel" id="phone" placeholder="Ex: 06 12 34 56 78">
+                            <input type="tel" id="phone" placeholder="Ex: 07 60 13 08 88">
                         </div>
                         <div class="form-group">
                             <label for="message">Vos attentes (Sommeil, vitalité, gestion du stress, alimentation...)</label>
@@ -718,7 +730,6 @@
 
         // Toggle du Menu
         burger.addEventListener('click', () => {
-            nav.classList.toggle('nav-links.active'); // Correction syntaxique de classe
             nav.classList.toggle('active');
             burger.classList.toggle('toggle');
         });
