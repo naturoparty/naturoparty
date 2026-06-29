@@ -246,6 +246,78 @@
             color: var(--text-muted);
         }
 
+/* --- TARIFS & PRESTATIONS --- */
+        .tarifs-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .tarifs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tarif-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(44, 94, 67, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tarif-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(44, 94, 67, 0.05);
+        }
+
+        .tarif-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .tarif-duration {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .tarif-price {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--dark);
+            margin: 25px 0;
+            font-weight: 400;
+        }
+
+        .tarif-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+        }
+
+        .tarif-features li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--dark);
+        }
+
+        .tarif-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+            font-weight: 700;
+        }
         /* --- VUTRINE EBOOKS --- */
         .ebooks-section {
             background-color: var(--light);
@@ -468,6 +540,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#approche">Mon Approche</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
                 <li><a href="#ebooks">Mes Guides KDP</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -522,7 +595,47 @@
                 </div>
             </div>
         </section>
+<!-- SECTION TARIFS & PRESTATIONS -->
+        <section id="tarifs" class="tarifs-section">
+            <div class="container">
+                <h2 class="section-title">Tarifs & Accompagnements</h2>
+                <p class="section-subtitle">Des séances sur-mesure adaptées à vos objectifs de vitalité. Consultations à domicile (secteur Nice, Cagnes-sur-Mer, Cannes) ou à distance en visioconférence.</p>
+                
+                <div class="tarifs-grid">
+                    <!-- CARTE 1 : BILAN INITIAL -->
+                    <div class="tarif-card">
+                        <div>
+                            <h3>Bilan de Vitalité Initial</h3>
+                            <span class="tarif-duration">Première consultation — 1h30</span>
+                            <div class="tarif-price">90 €</div>
+                            <ul class="tarif-features">
+                                <li>Analyse globale de vos habitudes de vie et antécédents</li>
+                                <li>Étude personnalisée de votre rythme chronobiologique</li>
+                                <li>Identification des freins à votre pleine énergie</li>
+                                <li>Envoi d'une feuille de route d'hygiène de vie sur-mesure</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn" style="width: 100%;">Réserver mon bilan</a>
+                    </div>
 
+                    <!-- CARTE 2 : SUIVI -->
+                    <div class="tarif-card">
+                        <div>
+                            <h3>Consultation de Suivi</h3>
+                            <span class="tarif-duration">Ajustement & Autonomie — 1h</span>
+                            <div class="tarif-price">65 €</div>
+                            <ul class="tarif-features">
+                                <li>Évaluation des premiers ajustements mis en place</li>
+                                <li>Adaptation progressive de votre programme de vitalité</li>
+                                <li>Conseils ciblés en phytologie et aromathérapie sécurisée</li>
+                                <li>Accompagnement continu vers votre totale autonomie</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary" style="width: 100%; margin-left: 0;">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- SECTION EBOOKS VITRINE -->
         <section class="ebooks-section" id="ebooks">
             <div class="container">
